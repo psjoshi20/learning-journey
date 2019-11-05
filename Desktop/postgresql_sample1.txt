@@ -1,0 +1,32 @@
+select * from "Donors"."Funds" where "Date" between '2018-12-15' and '2019-03-15' order by "Date";
+insert into "Donors".donors2 ("FirstName", "LastName", "Email", "Gender", "Tel") values ('Agosto', 'Warr', 'awarr0@howstuffworks.com', 'Male', '611-768-4307');
+insert into "Donors"."Funds" ("donorID", "Amount", "Date") values (1,  7341.77, '7/7/2019');
+select * from "Donors"."Funds" where "donorID" < 10;
+select * from "Donors"."Funds" where "donorID" between 200 AND 250;
+
+select B."FirstName",B."LastName", A."Amount" , A."Date" 
+from "Donors"."Funds" A ,"Donors".donors2  B 
+where A."donorID" between 200 AND 250 And A."donorID" = B."donorID" 
+order by A."Date";
+
+select B."FirstName",B."LastName", A."Amount" , A."Date" 
+from "Donors"."Funds" A ,"Donors".donors2  B 
+where A."donorID" = B."donorID"  And A."Amount" between 4000.0 AND 4998.71 
+order by A."Amount" Desc;
+
+SELECT "Email", "FirstName", "donorid" FROM "Donors" WHERE "donorid" < '5' ORDER BY "FirstName" DESC LIMIT 50
+
+-----------------
+cd ~/IOT/IOTstack
+docker 
+start -> docker-compose -f docker-compose-postgres.yml up -d
+shutdown -> docker-compose -f docker-compose-postgres.yml down
+
+------------
+localhost:8080
+system -> PostgreSQL
+derver-> postgres
+Username-> postuser
+Username-=postuser
+password=postpassword
+DB=postdbp
