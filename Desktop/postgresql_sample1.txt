@@ -30,3 +30,31 @@ Username-> postuser
 Username-=postuser
 password=postpassword
 DB=postdbp
+-----------------------------------
+cd ~/techladies
+docker
+start-> docker-compose -f docker-compose-postgres.yml up -d
+---------------------------------------------
+version: '2'
+services:
+  postgres:
+    container_name: postgres-back
+    image: postgres:11.5
+    restart: unless-stopped
+    env_file:
+      - ./postgres-back.env
+    ports:
+      - 5436:5432
+    volumes:
+      - ./volumes/postgres11_5/data:/var/lib/postgresql/data
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+  node10hp20:
+    container_name: node10hp20
+    image: node10x:hp20
+    volumes: 
+      - ./reach-backend:/home/psjoshi20
