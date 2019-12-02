@@ -1,0 +1,18 @@
+{
+  "name": "psj-express",
+  "version": "1.0.0",
+  "description": "Exercise to set up a simple express server",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\"\u001f\u001f&&exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "Techladies"
+  },
+  "author": "psjoshi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
