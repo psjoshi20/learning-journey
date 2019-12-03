@@ -1,0 +1,27 @@
+ exercise 3.1
+Done in javascript console
+
+var name
+undefined
+var name ="Elisha Tan"
+undefined
+name
+"Elisha Tan"
+name ="janyn"
+"janyn"
+name
+"janyn"
+let name ="Elisha tan"
+undefined
+name
+"Elisha tan"
+const name ="Elisha Tan"
+VM798:1 Uncaught SyntaxError: Identifier 'name' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM798:1
+name 
+"Elisha tan"
+name ="boo boo"
+"boo boo"
+const name
+VM847:1 Uncaught SyntaxError: Missing initializer in const declaration
