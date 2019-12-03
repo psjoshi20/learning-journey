@@ -1,0 +1,109 @@
+Exercise 2/lesson 2 
+tried in chromium 
+The following exercises are done in the Chrome browser's JavaScript Console.
+here is the summary. for convenience I copied from screen to store and review.
+exercise 2.1
+Exercise 2.1
+Scenario: You see data things
+
+Objective:
+
+Learn about commonly used data types in JavaScript: boolean, integer, float (floating-point number, aka double) string. These are also known as primitives.
+Steps:
+
+Type the following thing into console:
+
+true
+This is a boolean. There can be only 2 possible values: true or false
+
+false
+You can read up more about Booleans.
+
+Here's an integer (numbers):
+
+9999
+The largest number value is approximately 1.79E+308, or 21024.
+
+For bigger numbers, we use BigInt.
+
+You can see the type of data by typing:
+
+typeof 9999
+Here's a string:
+
+"Hello world"
+You can manipulate strings:
+
+"tech ladies".toUpperCase()
+
+"la la. ".repeat(10)
+
+'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?'.replace('dog', 'monkey')
+You can read up more about Strings.
+
+Here's a floating number:
+
+3.146
+When you are unsure:
+
+null
+
+----------------------------------------------------------------------------------------------------
+typeof 9999
+"number"
+true
+true
+false
+false
+9999
+9999
+typeof greetings
+"undefined"
+:hello World"
+VM131:1 Uncaught SyntaxError: Unexpected token :
+"Hello world"
+"Hello world"
+typeof "hello World"
+"string"
+"techladies".toUppercase()
+VM208:1 Uncaught TypeError: "techladies".toUppercase is not a function
+    at <anonymous>:1:14
+(anonymous) @ VM208:1
+"techladies".toUpperCase()
+"TECHLADIES"
+"la la. ".repeat(10)
+"la la. la la. la la. la la. la la. la la. la la. la la. la la. la la. "
+3.146
+3.146
+typeof(3.146)
+
+------------------------------------------------------------------------------------
+Exercise 2.2
+var user ={name:Elisha Tan, email:'elisha@example.com'}
+VM514:1 Uncaught SyntaxError: Unexpected identifier
+user.name
+VM531:1 Uncaught ReferenceError: user is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM531:1
+var user = {
+	name: 'Elisha Tan',
+	email: 'elisha@example.com'
+}
+undefined
+user.name
+"Elisha Tan"
+user ['name']
+"Elisha Tan"
+---------------------------------------------------------------
+2.3 arrays
+
+[0,1,2,3,5,8,13]
+(7) [0, 1, 2, 3, 5, 8, 13]
+['Apple]
+VM602:1 Uncaught SyntaxError: Invalid or unexpected token
+['Apple 🍎', 'Banana 🍌', 'Coconut 🥥', ]
+(3) ["Apple 🍎", "Banana 🍌", "Coconut 🥥"]
+[1,2,3].push(5)
+4
+[1,2,3,4].push(5)
+5
