@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lesson 5</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .done {
+        text-decoration: line-through;
+      }
+      a {
+        cursor: pointer;
+      }
+    </style>
+    <script src="lesson5.js"></script>
+  </head>
+  <body>
+    <h1>Interactive To-Do List</h1>
+
+    <form id="todoForm">
+      <p>
+        <label for="todoTextField">New To Do:</label>
+        <input type="text" id="todoTextField" size="40" />
+      </p>
+      <p>
+        <label for="todoCategoryField">Category:</label>
+        <select id="todoCategoryField">
+          <option value="shopping">🛍 Shopping</option>
+          <option value="event">🗓 Event</option>
+          <option value="pet">🐱 Pet</option>
+          <option value="others" selected>📝 Others</option>
+        </select>
+      </p>
+      <p>
+        <button>Add To Do</button>
+      </p>
+    </form>
+
+    <h2>Items</h2>
+    <ul id="myList"></ul>
+  </body>
+</html>
