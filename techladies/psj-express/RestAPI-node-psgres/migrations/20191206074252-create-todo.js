@@ -9,14 +9,17 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       complete: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        defaultValue:false,
       },
       UserId: {
-        type: Sequelize.INTEGER
-      },
+        type: Sequelize.INTEGER,
+        allowNull :false,
+        },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -24,7 +27,16 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      todoId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Todos',
+          key: 'id',
+          as: 'todoId',
+        },
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
