@@ -1,0 +1,20 @@
+{
+  "development": {
+    "database": "sguser_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+    
+  },
+  "test": {
+    "database": "sguser_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+    
+  },
+  "production": {
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+    
+  }
+}

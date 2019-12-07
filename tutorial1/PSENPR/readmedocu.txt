@@ -168,4 +168,67 @@ npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@
 added 38 packages from 96 contributors and audited 877054 packages in 22.874s
 found 0 vulnerabilities
 
+npm install --save-dev sequelize-cli
+
+> core-js@2.6.10 postinstall /home/pi/tutorial1/PSENPR/node_modules/core-js
+> node postinstall || echo "ignore"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon: 
+> https://opencollective.com/core-js 
+> https://www.patreon.com/zloirock 
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+npm WARN tsutils@3.17.1 requires a peer of typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"arm"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"arm"})
+
++ sequelize-cli@5.5.1
+added 32 packages from 28 contributors and audited 877354 packages in 23.89s
+found 0 vulnerabilities
+
+npx sequelize --help
+
+Sequelize CLI [Node: 11.15.0, CLI: 5.5.1, ORM: 5.21.2]
+
+sequelize [command]
+
+Commands:
+  sequelize db:migrate                        Run pending migrations
+  sequelize db:migrate:schema:timestamps:add  Update migration table to have timestamps
+  sequelize db:migrate:status                 List the status of all migrations
+  sequelize db:migrate:undo                   Reverts a migration
+  sequelize db:migrate:undo:all               Revert all migrations ran
+  sequelize db:seed                           Run specified seeder
+  sequelize db:seed:undo                      Deletes data from the database
+  sequelize db:seed:all                       Run every seeder
+  sequelize db:seed:undo:all                  Deletes data from the database
+  sequelize db:create                         Create database specified by configuration
+  sequelize db:drop                           Drop database specified by configuration
+  sequelize init                              Initializes project
+  sequelize init:config                       Initializes configuration
+  sequelize init:migrations                   Initializes migrations
+  sequelize init:models                       Initializes models
+  sequelize init:seeders                      Initializes seeders
+  sequelize migration:generate                Generates a new migration file
+                                                                           [aliases: migration:create]
+  sequelize model:generate                    Generates a model and its migration
+                                                                               [aliases: model:create]
+  sequelize seed:generate                     Generates a new seed file         [aliases: seed:create]
+
+Options:
+  --help     Show help                                                                       [boolean]
+  --version  Show version number                                                             [boolean]
+pi@raspberrypi:~/tutorial1/PSENPR $  npx sequelize-cli init
+
+Sequelize CLI [Node: 11.15.0, CLI: 5.5.1, ORM: 5.21.2]
+
+Created "config/config.json"
+Successfully created models folder at "/home/pi/tutorial1/PSENPR/models".
+Successfully created migrations folder at "/home/pi/tutorial1/PSENPR/migrations".
+Successfully created seeders folder at "/home/pi/tutorial1/PSENPR/seeders
 
