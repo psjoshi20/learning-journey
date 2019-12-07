@@ -1,0 +1,131 @@
+This tutorial demonstrates very simple Nodejs ORM (Object Relational Mapping) technique on PostgreSQL. Nodejs is non-blocking I/O model uses  Single Thread Event Loop [NodeJS] and Sequelize uses promises to control async control-flow.
+
+Project definition: Let’s create a “User” table and retrieve user data from it.
+User table fields:
+
+id    username    password    user_info   createdAt   updatedAt
+Setting
+We need to install PostgreSQL (client and JSON serializer/deserializer) and Sequielize (including Sequlize CLI tool). If you want to install PostgreSQL server on your localhost go to here and install after downloading.
+In your package.json put following dependencies:
+
+"dependencies": {
+  "pg": "^6.2.4",
+  "pg-hstore": "^2.3.2",
+  "sequelize": "^4.0.0",
+  "sequelize-cli": "^2.7.0",
+}
+Or install through terminal:
+
+$npm install --save pg
+$npm install --save pg-hstore
+$npm install --save sequelize
+$npm install --save sequelize-cli
+Initialize Sequelize ORM, this usually creates a model, migrations, seeds and config.js
+
+$sequelize init
+After running this command plz check if there some errors on your terminal. Output becomes as following in case you don’t have any issues.
+
+Sequelize [Node: 4.2.6, CLI: 2.7.0, ORM: 4.0.0] (version numbers will be different)
+
+Created "config/config.json"
+Successfully created migrations folder at "/data/projects/nodejs/server/migrations".
+Successfully created seeders folder at "/data/projects/nodejs/server/seeders".
+Successfully created models folder at "/data/projects/nodejs/server/models".
+So basically we will get following project structure:
+
+   server   
+   |----- package.json   
+   |----- models
+          |----- index.js (here is Sequelizer DB connection source)
+   |----- migrations   
+   |----- seeders   
+   |----- config    
+         |----- config.js
+Edit your config.js file with your DB server credentials:
+
+{
+ "development": {
+ "username": "uname",
+ "password": "pwd",
+ "database": "exampledb",
+ "host": "127.0.0.1",
+ "dialect": "postgres"
+ },
+ "test": {
+ "username": "uname",
+ "password": "pwd",
+ "database": "exampledb",
+ "host": "127.0.0.1",
+ "dialect": "postgres"
+ },
+ "production": {
+ "use_env_variable": "DATABASE_URL",
+ "dialect": "postgres"
+ }
+}
+Create a model
+Note that id, createdAt and updatedAt fields automatically created by PostgreSQL. So, we should supply rest of fields as following (suppose user_info field holds JSON data, plz visit this Sequelize data type page for mode data type info).
+
+$sequelize model:create --force --name User --attributes "username:string, password:string,  user_info:JSON"
+you will be seeing following execution logs:
+
+Sequelize [Node: 4.4.1, CLI: 2.7.0, ORM: 4.1.0]
+Loaded configuration file "config/config.json".
+Using environment "{your_environment}".
+So, now if you check you models and migrations folder there are User related files created (user.js under models folder and {date}_create_user.js under migrations folder).
+
+// models -> user.js
+'use strict';
+module.exports = function(sequelize, DataTypes) {
+  var User = sequelize.define('User', {
+    username: DataTypes.STRING,
+    password: DataTypes.STRING,
+    user_info: DataTypes.JSON
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      }
+    }
+  });
+  return User;
+};
+// {date}_create_user.js
+'use strict';
+module.exports = {
+  up: function(queryInterface, Sequelize) {
+    return queryInterface.createTable('Users', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      username: {
+        type: Sequelize.STRING
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      user_info: {
+        type: Sequelize.JSON
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
+    });
+  },
+  down: function(queryInterface, Sequelize) {
+    return queryInterface.dropTable('Users');
+  }
+};
+Next is migration: So far we have created a model and now need to apply to server.
+
+$sequelize db:migrate  // plz check your DB server connection before execution this command
+You can connect to your server and check User table.
+
