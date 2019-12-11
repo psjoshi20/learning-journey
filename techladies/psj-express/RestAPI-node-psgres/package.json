@@ -4,6 +4,7 @@
   "description": "Assignment 3 - Demo REST API App",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --exec babel-node app.js",
     "start:dev": "nodemon ./bin/www",
     "start": "node index.js",
     "dev": "nodemon index.js",
