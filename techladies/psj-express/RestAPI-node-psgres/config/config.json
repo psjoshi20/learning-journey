@@ -1,21 +1,26 @@
 {
   "development": {
-    "username": "pi",
-    "password": "abcd1234",
-    "database": "todos-dev",
+    "username": "reachuser",
+    "password": "reachpassword",
+    "database": "Bookstore_development",
     "host": "127.0.0.1",
-    "port":5432,
+    "port":"5436",
     "dialect": "postgres"
     
   },
   "test": {
-    "username": "pi",
-    "password": "abcd1234",
-    "database": "todos_test",
+    "username": "reachuser",
+    "password": "reachpassword",
+    "database": "Bookstore_development",
     "host": "127.0.0.1",
-    "port":5432,
+    "port":"5436",
     "dialect": "postgres"
-
+  },
+  "production": {
+    "username": "reachuser",
+    "password": "reachpassword",
+    "database": "Bookstore_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   }
-  
 }
