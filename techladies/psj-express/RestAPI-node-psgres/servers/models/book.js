@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-  const Book = sequelize.define('Book', {
+  const Book = sequelize.define('Books', {
     title: {
       type: DataTypes.STRING,
       allowNull: {
@@ -39,7 +39,7 @@ export default (sequelize, DataTypes) => {
   }, {});
   Book.associate = (models) => {
     // associations can be defined here
-    Book.belongsTo(models.User,{
+    Book.belongsTo(models.Users,{
       foreignKey:'userId',
       onDelete :'CASCADE'
     });
