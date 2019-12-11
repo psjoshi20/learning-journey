@@ -5,14 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node app.js",
-    "start:dev": "nodemon ./bin/www",
-    "start": "node index.js",
-    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
@@ -24,6 +23,7 @@
     "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
     "nodemon": "^2.0.1"
   }
 }

@@ -1,6 +1,4 @@
-//https://medium.com/@Alibaba_Cloud/
-//building-a-restful-api-with-express-postgresql-and-node-using-es6-1de2b3b06c64
-
+//building medium.com/alibaba_cloud--a-restful-api-with-express-postgresql-and-node-using-es6-1de2b3b06c64
 
 const express = require('express')
 const app = express()

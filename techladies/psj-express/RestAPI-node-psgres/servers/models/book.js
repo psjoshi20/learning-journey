@@ -31,7 +31,7 @@ export default (sequelize, DataTypes) => {
     userId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'User',
+        model: 'Users',
         key: 'id',
         as: 'userId',
       }
