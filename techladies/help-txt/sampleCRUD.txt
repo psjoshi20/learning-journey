@@ -1,0 +1,74 @@
+codes for various CRUD operation in Donor Management System for REACH Development
+fIRST WE WILL TRY FOR Donor
+
+// / Post a Donor
+exports.create = (req, res) => {  
+  // Save to  database reach-development
+// seq model usage
+
+  db.Donor.create(req.body).then(donors => {    
+      // Send created donor to client/
+      res.json(donors);
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({msg: "error", details: err});
+    });
+};
+ 
+// FETCH/get/isplay all donors from Donor MOdel
+exports.findAll = (req, res) => {
+  db.Donors.findAll().then(Donors => {
+      // Send All donor to Client
+      res.json(donors);
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({msg: "error", details: err});
+    });
+};
+ 
+// Find a Donor by Id - like idNo or idTypeId
+exports.findByIdTypeId = (req, res) => {  
+  db.Donors.findByIdTypeId(req.params.id).then(Donors => {
+      res.json(donors);
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({msg: "error", details: err});
+    });
+};
+ 
+// Update a Donor
+exports.update = (req, res) => {
+  const id = req.body.id;
+  db.Donors.update( req.body, 
+      { where: {id: id} }).then(() => {
+        res.status(200).json( { mgs: "Updated Successfully -> Donor Id = " + id } );
+      }).catch(err => {
+        console.log(err);
+        res.status(500).json({msg: "error", details: err});
+      });
+};
+ 
+// Delete a Customer by Id
+db.DOnors.destroy({
+      where: { id: id }
+    }).then(() => {
+      res.status(200).json( { msg: 'Deleted Successfully -> Donor Id = ' + id } );
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({msg: "error", details: err});
+    })
+   // **************************************************************************************
+
+// Delete a  user  by Id
+exports.delete = (req, res) => {
+  const id = req.params.id; // here ths id is provided by url
+  db.User.destroy({
+      where: { id: id }
+    }).then(() => {
+      res.status(200).json( { msg: 'Deleted Successfully -> user Id = ' + id } );
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({msg: "error", details: err});
+    });
+};
+
