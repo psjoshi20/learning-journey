@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-restapi",
+  "version": "1.0.0",
+  "description": "another tutorial explaining restapi using nodejs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "psj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "json": "^9.0.6",
+    "nodemon": "^2.0.2"
+  }
+}
