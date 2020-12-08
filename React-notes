@@ -1,0 +1,33 @@
+Introduction to component- 
+->a component represent the part of user interface
+->component are reusable and can be use in anywhere in user interface
+There are mainly two components in React:
+Functional Components also known as Stateless component
+Class Component also known as Stateful component
+Functional Component or Stateless Component:
+It is simple javascript functions that simply returns html UI
+It is also called “stateless” components because they simply accept data and display them in some form that is they are mainly responsible for rendering UI.
+It accept properties(props) in function and return html(JSX)
+It gives solution without using state
+There is no render method used in functional components.
+These can be typically defined using arrow functions but can also be created with the regular function keyword.
+example:
+//with arrow function
+import React from “react”;
+const Person = (props) => (
+ <div>
+ <h1>Hello, {props.name}</h1>
+ </div>
+);
+export default Person;
+//without arrow function
+import React from “react”;
+function Person(props){
+return (
+ <div>
+ <h1>Hello, {props.name}</h1>
+ </div>
+)
+};
+ 
+export default Person;
