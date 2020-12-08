@@ -31,3 +31,70 @@ return (
 };
  
 export default Person;
+Class Component or Stateful Component
+It is regular ES6 classes that extends component class form react library
+Also known as “stateful” components because they implement logic and state.
+It must have render() method returning html
+It has complex UI Logic
+You pass props to class components and access them with this.props
+example:
+import React, { Component } from “react”;
+class Person extends Component {
+ constructor(props){
+ super(props);
+ this.state = {
+ name: “bikash”;
+ }
+ }
+ 
+ render() {
+ return (
+ <div>
+ <h1>Hello {this.state.name}</h1>
+ </div>
+ );
+ }
+}
+export default Person;
+Lifecycle method or Lifecycle hooks in Class Component
+The lifecycle hooks of class component can classified method in 4 phases.
+Mounting():
+when an instance of a component is being created and inserted into the DOM
+it has 4 method constructor(),static getDerivedStateFromProps(),render() and componentDidMount()
+a.constructor(props):
+->a special function that will get called whenever a new component is created
+->initializing the state binding the event handler
+->super(props) that directly overites this.state
+b.static getDerivedStateFromProps(props,state)
+->when the state of the component depends on changes
+c.render():
+->we read props and state and return jsx
+d.componentDidMount()
+->invoked immediately after a component and all its children components have been redered to the DOM
+2.Updating():
+when a component is being re-rendered as a result of chnage to either its props or state
+it has 5 lifecycle static getDerivedStateFromProps(),shouldComponentUpdate(),render(),getSnapshotUpdate() and componentDidupdate()
+a.getDerivedStateFromProps()
+->This is the first method that is called when a component gets updated.
+->This is still the natural place to set the state object based on the initial props.
+b.shouldComponentUpdate()
+->In this method you can return a Boolean value that specifies whether React should continue with the rendering or not.
+->The default value is true.
+c.getSnapshotBeforeUpdate()
+->the getSnapshotBeforeUpdate() method you have access to the props and state before the update, meaning that even after the update, you can check what the values were before the update.
+->If the getSnapshotBeforeUpdate() method is present, you should also include the componentDidUpdate() method, otherwise you will get an error.
+d.componentDidUpdate()
+->thee componentDidUpdate() method is called after the component is updated in the DOM.
+3.UnMounting:
+used when component is being removed from the DOM.
+it has 1 lifecycle componentWillUnmount()
+4.Error Handeling:
+when there is an error during rendering
+it has 2 lifecycle static getDerivedStateFromProps() and componentDidCatch
+So why to use functional components insted of class component?
+Benefits you get by using functional components in React:
+1.Functional component are much easier to read and test because they are plain JavaScript functions without state or lifecycle-hooks
+2.It has less code which makes it more readable
+3.It will get easier to separate container and presentational components because you need to think more about your component’s state if you don’t have access to setState() in your component
+Conclusion:
+If you are writing a presentational component which doesn’t have its own state or needs to access a lifecycle hook,use functional component as much as possible. For state management you can use class component.
